@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-Rspec.describe Item, type: model do
+RSpec.describe Item, type: :model do
   describe 'soft delete function' do
     it 'soft deletes an item' do
       item = Item.create(name: 'Test Item')
