@@ -120,7 +120,7 @@ rspec
 
 ## Running on GitPod
 
-Sign in to GitPod and used the following shared workspace:
+Sign in to GitPod and use the following shared workspace:
 https://gitpod.io/start/#cli3338198-softdelete-r7duhq6hjzt
 
 1. Check Permissions
