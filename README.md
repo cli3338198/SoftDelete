@@ -48,6 +48,7 @@ RSpec.describe Item, type: :model do
       item = Item.create(name: 'Test Item')
       item.soft_delete
       expect(item.deleted_at).to be_present
+      expect(Item.count).to eq(0)
     end
 
     it 'restores a soft deleted item' do
@@ -60,10 +61,12 @@ RSpec.describe Item, type: :model do
     it 'excludes soft deleted items' do
       item = Item.create(name: 'Test item')
       soft_deleted_item = Item.create(name: 'Soft Deleted Test Item')
+      expect(Item.count).to eq(2)
       soft_deleted_item.soft_delete
 
       items = Item.all
       expect(items).not_to include(soft_deleted_item)
+      expect(Item.count).to eq(1)
     end
 
     it 'excludes soft deleted items from queries' do
